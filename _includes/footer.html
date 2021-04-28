@@ -1,26 +1,28 @@
 <footer class="site-footer">
-        &copy; 2017 Counterspace Consulting &bullet; site by ifSoWhy
+        &copy; 2021 Counterspace Consulting &bullet; site by ifSoWhy
         <div id="mobile-contact">
           <a href="mailto:claire@counterspaceconsulting.com">claire@counterspaceconsulting.com</a>
         </div>
 </footer>
 
   <script>
-    
+
     var windowWide = $(window).width() > 600;
     var lastSize = windowWide ? 'wide' : 'narrow';
     var sections = {'wide': '.page-section', 'narrow': '.home-left, .page-section' }
 
     $(function(){
       $.scrollify({
-        section: sections[lastSize], 
+        section: sections[lastSize],
         interstitialSection: "site-footer",
         setHeights: false,
-        touchScroll: false,
-        //offset: 100,
-        before: ccScroll,
+        overflowScroll: true,
+        scrollSpeed: 800,
 
-        afterResize: adjustSections
+        //offset: 100,
+        //before: ccScroll,
+
+        //afterResize: adjustSections
       });
     });
 
@@ -34,10 +36,8 @@
     }
 
     function ccScroll(index,sections){
-      console.log("ccScroll: index = " + index);
-      console.log("index is a " + typeof index);
-      if (index !== '1') {
-      }
+      //console.log("ccScroll: index = " + index);
+      //console.log("index is a " + typeof index);
     }
 
   </script>

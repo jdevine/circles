@@ -12,6 +12,10 @@
   min-height: 4em;
 }
 
+.center {
+  text-align: center;
+}
+
 $menu-height: 60px;
 $menu-margin-top: 20px;
 
@@ -36,7 +40,7 @@ $picture-margin: 3px;
 
   vertical-align: middle;
 
-  border-top: $menu-margin-top solid $body-background-color; 
+  border-top: $menu-margin-top solid $body-background-color;
 
   .site-nav {
 
@@ -52,7 +56,7 @@ $picture-margin: 3px;
       &:not(:last-child) {
         margin-right: 20px;
       }
-    }  
+    }
 
     .nav-trigger, .menu-icon {
       display: none;
@@ -61,7 +65,7 @@ $picture-margin: 3px;
   }
 }
 
- 
+
 .site-title {
   @include relative-font-size(2);
   font-weight: 500;
@@ -70,7 +74,7 @@ $picture-margin: 3px;
   color: white;
   text-decoration: none;
   letter-spacing: 0.03em;
- 
+
 
   &:visited, &:hover {
     color: white;
@@ -110,7 +114,39 @@ $picture-margin: 3px;
   margin-left: $right-side-margin;
   padding: $section-padding;
   padding-top: $top-offset + 20px;
+
 }
+
+/**
+section.home-right.page-section {
+    position: relative;
+    &::before {
+      content: "";
+      background-image: url(images/Star2-05trans.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      //background-position: 50% -30%;
+      position: absolute;
+      //top: 0px;
+      //right: 0px;
+      //left: 0px;
+      //bottom: 0px;
+      height: 290px;
+      width: 290px;
+      max-height: 30VH;
+      max-width: 30VH;
+      top: 50px;
+      right: 0;
+
+
+      opacity: 0.15;
+    }
+    div.blurb {
+      opacity: 1;
+    }
+}
+**/
 
 .page-section {
   h3, h4 {
@@ -124,7 +160,7 @@ $picture-margin: 3px;
       //border-bottom: 2px solid $blue;
 
       // deleting  -- padding left caused uneven wrapping
-      // I guess we wanted some right space 
+      // I guess we wanted some right space
       // for icons, but not
       // using it anymore...
 
@@ -135,7 +171,7 @@ $picture-margin: 3px;
   a, a:visited {
     color: $blue;
     &[target="_blank"]:after{
-      content:" " url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVR4Xn3PgQkAMQhDUXfqTu7kTtkpd5RA8AInfArtQ2iRXFWT2QedAfttj2FsPIOE1eCOlEuoWWjgzYaB/IkeGOrxXhqB+uA9Bfcm0lAZuh+YIeAD+cAqSz4kCMUAAAAASUVORK5CYII=);  
+      content:" " url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVR4Xn3PgQkAMQhDUXfqTu7kTtkpd5RA8AInfArtQ2iRXFWT2QedAfttj2FsPIOE1eCOlEuoWWjgzYaB/IkeGOrxXhqB+uA9Bfcm0lAZuh+YIeAD+cAqSz4kCMUAAAAASUVORK5CYII=);
       vertical-align: top;
     }
   }
@@ -203,7 +239,7 @@ img.center-star {
   margin-bottom: auto;
 
   img#headshot {
-    max-width: 400px; 
+    max-width: 400px;
     border: $picture-margin solid $background-color;
 
     max-height: calc(100vh - 200px);
@@ -224,7 +260,7 @@ img.center-star {
 
   &.right {
     margin-top: 1em;
-    text-align: left; 
+    text-align: left;
     background-position: right top;
   }
 }
@@ -267,13 +303,13 @@ h1.mid-title {
 ul.believe-list {
   list-style: none;
   margin-left: 0;
-  li {
+  & > li {
     margin-bottom: 1.5em;
     margin-left: 0;
     //padding-left: 25px;
     line-height: 1.5;
     //background: url('images/staricon.png') no-repeat 0 3px;
-    padding: 0 0 0 50px; 
+    padding: 0 0 0 50px;
     position: relative;
     //overflow: hidden;
     &:before {
@@ -291,6 +327,16 @@ ul.believe-list {
         -ms-transform: rotate(#{$i*60}deg);
         -webkit-transform: rotate(#{$i*60}deg);
         transform: rotate(#{$i*60}deg);
+      }
+    }
+  }
+  &.clients {
+    & > li {
+      &:before {
+        width: 25px;
+        height: 25px;
+        top: 3px;
+        left: 18px;
       }
     }
   }
@@ -494,7 +540,7 @@ div.star-sep {
 @include media-query($content-width){
 
   #site-wrapper{
-    width: 100%; 
+    width: 100%;
   }
 
   .site-header {
@@ -511,7 +557,7 @@ div.star-sep {
     top: 0;
 
     .headshot {
-      margin-left: 2em; 
+      margin-left: 2em;
       img#headshot {
         max-width: 100%;
       }
@@ -526,11 +572,11 @@ div.star-sep {
   }
 
   .home-right, section.page-section, .site-title {
-    margin-left: calc(50% - #{$menu-margin-top}); 
+    margin-left: calc(50% - #{$menu-margin-top});
   }
 
   .site-footer {
-    margin-left: calc(50% - #{$menu-margin-top} + #{$picture-margin}); 
+    margin-left: calc(50% - #{$menu-margin-top} + #{$picture-margin});
 
     //margin-left: ($content-width * .45) + $picture-margin ;
   }
@@ -547,7 +593,7 @@ div.star-sep {
 
 
   #site-wrapper{
-    width: 100%; 
+    width: 100%;
   }
 
   .site-title {
@@ -556,7 +602,7 @@ div.star-sep {
     text-align: left;
     line-height: 1.5;
     padding: .5em 0;
-    margin-left: calc(50% - #{$menu-margin-top } + #{$picture-margin + $section-padding} ); 
+    margin-left: calc(50% - #{$menu-margin-top } + #{$picture-margin + $section-padding} );
   }
 
   h1.mid-title {
@@ -568,7 +614,7 @@ div.star-sep {
       span {
         display: inline-block;
         line-height: 1.25;
-        padding-right: 1.5em; 
+        padding-right: 1.5em;
       }
     }
   }
@@ -576,7 +622,7 @@ div.star-sep {
 
 @include media-query($on-palm){
   #site-wrapper{
-    width: 100%; 
+    width: 100%;
   }
 
   .site-title {
@@ -590,12 +636,12 @@ div.star-sep {
   }
 
   .home-left{
-    width: 100%;   
+    width: 100%;
     position: static;
     border-bottom: 2px solid $green-background-color;
     border-right: none;
     padding: 0;
-    padding-top: $top-offset; 
+    padding-top: $top-offset;
     margin: 0;
     text-align: center;
   }
@@ -606,7 +652,7 @@ div.star-sep {
 
   .home-left {
     .headshot {
-      margin: 0;
+      margin: 10px;
       padding: 0;
     }
   }
