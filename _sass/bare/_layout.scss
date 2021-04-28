@@ -373,6 +373,19 @@ div.testimonial {
   font-size: 85%;
 }
 
+span.testimonial-author {
+    font-style: normal;
+    font-size: 87.5%;
+    font-weight: 500;
+    display: block;
+    text-align: right;
+    margin-left: 25%;
+  &:before {
+    content: '~';
+  }
+}
+
+
 div.star-sep {
   display: block;
   width: 100%;
@@ -688,7 +701,7 @@ div.star-sep {
   }
 
   ul.believe-list {
-    li {
+    & > li {
       padding-left: 50px;
       margin-bottom: 2em;
       &:before {
