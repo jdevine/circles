@@ -254,7 +254,7 @@ img.center-star {
 }
 
 .blurb {
-  @include relative-font-size(1.2);
+  //@include relative-font-size(1.2);
   padding: 0 1em 1em 1em ;
   text-align:right;
 
