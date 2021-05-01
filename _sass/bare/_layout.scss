@@ -9,7 +9,7 @@
 }
 
 .top-header {
-  min-height: 4em;
+  min-height: 4rem;
 }
 
 .center {
@@ -27,7 +27,7 @@ $picture-margin: 3px;
 
 .site-header {
   width: inherit;
-  min-height: $menu-height;
+  //min-height: $menu-height;
   //padding: 0 1em 0 0 ;
   padding: 0 0 0 0 ;
 
@@ -68,8 +68,14 @@ $picture-margin: 3px;
 
 .site-title {
   @include relative-font-size(2);
-  font-weight: 500;
-  line-height: $base-line-height * $base-font-size * 2.25;
+
+  font-family: $headline-font-family;
+  font-weight: $headline-font-weight;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  line-height: 1.7;
+
+  //line-height: $base-line-height * $base-font-size * 2.25;
   //letter-spacing: -1px;
   color: white;
   text-decoration: none;
@@ -99,7 +105,7 @@ $picture-margin: 3px;
   color: #333;
   width: $content-width * .45;
   min-height: calc(100vh - #{$menu-margin-top} - (#{$picture-margin} * 2));
-  padding-right: 3em;
+  padding-right: 3rem;
   margin: $picture-margin;
   position: fixed;
   z-index: 2;
@@ -153,8 +159,8 @@ section.home-right.page-section {
     //color: $site-green;
     color: $blue;
     text-align:left;
-    margin-bottom: .5em;
-    font-weight: 500;
+    margin-bottom: .5rem;
+    //font-weight: 500;
     span {
       //border-top: 4px solid $blue;
       //border-bottom: 2px solid $blue;
@@ -180,27 +186,27 @@ section.home-right.page-section {
 img.left-star {
   width: 70px;
   float: left;
-  margin-top: .5em;
-  margin-right: 1em;
-  margin-left: -.5em;
+  margin-top: .5rem;
+  margin-right: 1rem;
+  margin-left: -.5rem;
 }
 
 
 img.left-star2 {
-  width: 90px;
+  width: 70px;
   float: left;
-  margin-top: .5em;
-  margin-right: 1em;
-  margin-left: -.5em;
+  margin-top: .5rem;
+  margin-right: 1rem;
+  margin-left: -.5rem;
       -ms-transform: rotate(70deg);
       -webkit-transform: rotate(70deg);
   transform: rotate(70deg);
 }
 
 img.right-star {
-  width: 80px;
+  width: 60px;
   float: right;
-  margin: 0 -.5em .5em 1em;
+  margin: 0 -.5rem .5rem 1rem;
       -ms-transform: rotate(180deg);
       -webkit-transform: rotate(180deg);
   transform: rotate(150deg);
@@ -234,7 +240,7 @@ img.center-star {
 
 .headshot {
 
-  margin-left: 3em;
+  margin-left: 3rem;
   margin-top: 20px;
   margin-bottom: auto;
 
@@ -246,7 +252,7 @@ img.center-star {
   }
 
   .caption {
-    margin-top: 1em;
+    margin-top: 1rem;
     h1 {
       margin-bottom: 0;
     }
@@ -255,11 +261,11 @@ img.center-star {
 
 .blurb {
   //@include relative-font-size(1.2);
-  padding: 0 1em 1em 1em ;
+  padding: 0 1rem 1rem 1rem ;
   text-align:right;
 
   &.right {
-    margin-top: 1em;
+    margin-top: 1rem;
     text-align: left;
     background-position: right top;
   }
@@ -268,7 +274,7 @@ img.center-star {
 .home-right {
   .blurb.right {
     p {
-      margin-bottom: 1em;
+      margin-bottom: 1rem;
     }
 
     p:nth-of-type(2n){
@@ -304,7 +310,7 @@ ul.believe-list {
   list-style: none;
   margin-left: 0;
   & > li {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.5rem;
     margin-left: 0;
     //padding-left: 25px;
     line-height: 1.5;
@@ -356,7 +362,8 @@ div.graph {
 }
 
 span.question {
-  font-weight: 500;
+  font-family: $headline-font-family;
+  font-weight: 700;
   color: darken($text_color, 10%);
   display: block;
 }
@@ -404,7 +411,7 @@ div.star-sep {
 .site-footer {
   //border-top: 1px solid $grey-color-light;
   @include relative-font-size(0.75);
-  padding: 1em 0;
+  padding: 1rem 0;
   margin-left: ($content-width * .45) + $picture-margin ;
 
   text-align: center;
@@ -561,7 +568,7 @@ div.star-sep {
   }
 
   .site-title {
-    @include relative-font-size(1.5);
+    @include relative-font-size(1.85);
   }
 
   .home-left {
@@ -570,16 +577,16 @@ div.star-sep {
     top: 0;
 
     .headshot {
-      margin-left: 2em;
+      margin-left: 2rem;
       img#headshot {
         max-width: 100%;
       }
 
       h1 {
-        font-size: 1.25em;
-        line-height: 1.5em;
+        font-size: 1.25rem;
+        line-height: 1.5;
         font-weight: 500;
-        margin-top: .5em;
+        margin-top: .5rem;
       }
     }
   }
@@ -604,22 +611,21 @@ div.star-sep {
 // 480 to 800
 @include media-query($on-laptop){
 
-
   #site-wrapper{
     width: 100%;
   }
 
   .site-title {
-    @include relative-font-size(1.25);
-    display: inline-block;
+    @include relative-font-size(1.4);
+    //display: inline-block;
     text-align: left;
-    line-height: 1.5;
-    padding: .5em 0;
-    margin-left: calc(50% - #{$menu-margin-top } + #{$picture-margin + $section-padding} );
+    //line-height: 1.25;
+    padding: .5rem 0;
+    margin-left: calc(50% - #{$menu-margin-top } + #{$picture-margin + $section-padding + 10px} );
   }
 
   h1.mid-title {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
 
   .page-section {
@@ -627,7 +633,7 @@ div.star-sep {
       span {
         display: inline-block;
         line-height: 1.25;
-        padding-right: 1.5em;
+        padding-right: 1.5rem;
       }
     }
   }
@@ -639,7 +645,7 @@ div.star-sep {
   }
 
   .site-title {
-    @include relative-font-size(1.4);
+    @include relative-font-size(1.7);
     margin: 0;
   }
 
@@ -703,7 +709,7 @@ div.star-sep {
   ul.believe-list {
     & > li {
       padding-left: 50px;
-      margin-bottom: 2em;
+      margin-bottom: 1rem;
       &:before {
         left: 0px;
         top: -5px;
@@ -711,5 +717,3 @@ div.star-sep {
     }
   }
 }
-
-

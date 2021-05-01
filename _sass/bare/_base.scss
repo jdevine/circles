@@ -44,6 +44,11 @@ ul, ol, dl, figure,
 }
 
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headline-font-family;
+  font-weight: $headline-font-weight;
+}
+
 
 /**
  * Images
@@ -81,15 +86,6 @@ li {
     margin-bottom: 0;
   }
 }
-
-
-/**
- * Headings
- */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: $base-font-weight;
-}
-
 
 
 /**
@@ -207,6 +203,11 @@ pre {
   }
 }
 
+h1 > span.dash {
+  font-family: $base-font-family;
+  font-weight: 400;
+}
+
 .social-media-list {
   .icon {
     padding-right: 5px;
@@ -216,7 +217,6 @@ pre {
     padding-top: 5px;
   }
 }
-
 
 .subslogan {
   margin-bottom: .25rem;
@@ -238,17 +238,17 @@ $social_color: lighten($site-green, 8%);
   width: 100%;
   text-align: right;
   margin-bottom: 1rem;
-  
+
   a {
     display: inline-block;
     height: 24px;
     width: 24px;
     background-size: cover;
     border-radius: 2px;
-    background-color: $social_color; 
+    background-color: $social_color;
     border: 1px solid $social_color;
 
-    //background-color: $site-green; 
+    //background-color: $site-green;
     //border: 1px solid $site-green;
 
 
